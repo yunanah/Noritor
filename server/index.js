@@ -51,3 +51,20 @@ app.post("/event/list", (req, res) => {
       res.status(400).json({ success: false });
     });
 });
+
+app.post("/event/detail", (req, res) => {
+  const { keyword } = req.params;
+  Event.find({ keyWord: req.body.keyword })
+    .exec()
+    .then((eventList) => {
+      return res.status(200).json({
+        success: true,
+        eventList: eventList,
+      });
+    })
+    .catch((err) => {
+      return res.status(400).json({
+        success: false,
+      });
+    });
+});

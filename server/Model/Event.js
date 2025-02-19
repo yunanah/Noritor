@@ -13,6 +13,7 @@ const EventSchema = new mongoose.Schema(
     endDate: String,
     descImagesList: [{ fileName: String, fileType: String, desc: String }],
     keyWord: String,
+    pathKey: String,
   },
   { collection: "Events" }
 );
