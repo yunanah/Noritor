@@ -1,0 +1,16 @@
+.album-container {
+  width: 100%;
+  max-width: 742px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .img-container {
+    width: calc(100% / 3);
+    aspect-ratio: 1/1;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

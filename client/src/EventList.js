@@ -26,7 +26,10 @@ function EventList() {
               <img
                 key="index + '_'"
                 alt="이미지"
-                src={require(`./assets/images/event/${event.repImgFileName}`)}
+                src={require(`./assets/images/event/${event.repImgFileName.replace(
+                  "JPG",
+                  "jpg"
+                )}`)}
               />
             </>
           );
