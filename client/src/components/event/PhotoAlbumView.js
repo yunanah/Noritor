@@ -18,7 +18,6 @@ function PhotoAlbumView(props) {
     });
 
     setPhotos(tempArr);
-    console.log(props.events, tempArr);
   }, [props]);
 
   // 이미지경로 필요에 맞게 변환 및 파일 import

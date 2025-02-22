@@ -10,7 +10,7 @@ function App() {
     <>
       Hello Yura
       <Routes>
-        <Route path="/events" element={<EventView />} />
+        <Route path="/" element={<EventView />} />
         <Route path="/event">
           <Route path=":keyword" element={<EventDetailView />} />
         </Route>

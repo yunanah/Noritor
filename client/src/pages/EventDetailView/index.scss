@@ -1,0 +1,16 @@
+@import "../../styles/mixins";
+
+.root::v-deep {
+  li.dot {
+    box-shadow: none;
+    background: #ccc;
+  }
+}
+
+.carousel-content {
+  height: 100%;
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
