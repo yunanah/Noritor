@@ -4,11 +4,12 @@ import Test from "./components/Test";
 import EventList from "./EventList";
 import EventView from "./pages/EventView";
 import EventDetailView from "./pages/EventDetailView";
+import Header from "./components/base/Header";
 
 function App() {
   return (
     <>
-      Hello Yura
+      <Header />
       <Routes>
         <Route path="/" element={<EventView />} />
         <Route path="/event">
