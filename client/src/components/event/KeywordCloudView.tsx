@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { PhotoAlbumViewProp } from "../../types/event";
-import WordCloud from "../../components/WordCloud/index";
+import WordCloud, { KeyWordData } from "../../components/WordCloud/index";
 import "./KeywordCloudView.scss";
 
 const NotUsedWords = ["등", "및", "내"];
@@ -11,22 +11,14 @@ export interface SortedArrayItem {
 }
 
 function KeywordCloudView({ events }: PhotoAlbumViewProp) {
-  const [cleanedData, setCleanedData] = useState<SortedArrayItem[]>([]);
+  const [cleanedData, setCleanedData] = useState<KeyWordData[]>([]);
   const eventsData = useMemo(() => events, []);
 
-  useEffect(() => {
-    setCleanedData(cleanData);
-    console.log(cleanData);
-  }, [events?.[0].category]);
-
-  const sortedWords = useCallback(
-    (arr: SortedArrayItem[][]): SortedArrayItem[] => {
-      return arr.reduce((acc, curr) => {
-        return [...acc, ...curr];
-      }, []);
-    },
-    []
-  );
+  const sortedWords = useCallback((arr: KeyWordData[][]): KeyWordData[] => {
+    return arr.reduce((acc, curr) => {
+      return [...acc, ...curr];
+    }, []);
+  }, []);
 
   const cleanData = useMemo(() => {
     const tempData = eventsData.map((event, index) => {
@@ -38,11 +30,12 @@ function KeywordCloudView({ events }: PhotoAlbumViewProp) {
         )
         .filter((word) => word !== "" && !NotUsedWords.includes(word))
         .map((word) => {
-          const newObj = { text: "", value: 0 };
+          const newObj = { text: "", value: 0, keyword: "" };
           newObj.text = word;
-          newObj.value = event.importance * 10;
+          newObj.value = event.importance;
+          newObj.keyword = event.keyWord;
 
-          return newObj as SortedArrayItem;
+          return newObj as KeyWordData;
         });
 
       // 각 배열 요소 : Event별 title을 text, value 속성의 오브젝트로 구성된 배열로 변환
@@ -51,6 +44,10 @@ function KeywordCloudView({ events }: PhotoAlbumViewProp) {
 
     return sortedWords(tempData);
   }, []);
+
+  useEffect(() => {
+    setCleanedData(cleanData);
+  }, [events?.[0]?.category, cleanData]);
 
   return (
     <section className="cloud-container">
