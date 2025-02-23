@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./PhotoAlbumView.scss";
 import { useNavigate } from "react-router-dom";
+import {
+  EventItem,
+  ImageDescItem,
+  PhotoAlbumViewProp,
+} from "../../types/event";
 
-function PhotoAlbumView(props) {
-  const [photos, setPhotos] = useState([]);
+type ImageDescItemWithKeyword = ImageDescItem & { keyword: string };
+
+function PhotoAlbumView(props: PhotoAlbumViewProp) {
+  const [photos, setPhotos] = useState<ImageDescItemWithKeyword[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    let tempArr = [];
+    // 타입 지정 필요
+    let tempArr: any[] = [];
     props?.events?.forEach((event, index) => {
       // 이미지 목록에는 키워드 속성이 없어서 데이터 가공 후 push
       tempArr.push(
@@ -22,11 +30,11 @@ function PhotoAlbumView(props) {
 
   // 이미지경로 필요에 맞게 변환 및 파일 import
   // TODO: 근데 함수로 빼니가 좀 더 느려진 거 같다..?
-  const loadImage = (path) => {
+  const loadImage = (path: string) => {
     return require(`../../assets/images/event/${path.replace("JPG", "jpg")}`);
   };
 
-  const goToDetailPage = (keyword) => {
+  const goToDetailPage = (keyword: string) => {
     // 키워드에 해당하는 경험의 상세 페이지로 이동
     navigate(`/event/${keyword.replace(" ", "")}`);
   };
@@ -36,6 +44,7 @@ function PhotoAlbumView(props) {
       {photos.map((photo, idx) => {
         return (
           <div
+            key={idx}
             className="img-container"
             onClick={() => goToDetailPage(photo.keyword)}
           >
