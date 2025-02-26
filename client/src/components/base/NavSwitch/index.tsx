@@ -8,6 +8,7 @@ type NavSwithProp = {
 function NavSwitch(props: NavSwithProp) {
   return (
     <div className="switch" onClick={() => props.onClick()}>
+      {/* TODO: 글씨 => 아이콘으로 변경  */}
       MODE
     </div>
   );

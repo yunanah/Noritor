@@ -1,8 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import PhotoAlbumView from "../../components/event/PhotoAlbumView";
 import NavSwitch from "../../components/base/NavSwitch";
 import KeywordCloudView from "../../components/event/KeywordCloudView";
+import useEventStore from "../../stores/event";
 
 export enum ViewType {
   PHOTO_ALBUM = "photo-album-view",
@@ -10,8 +11,7 @@ export enum ViewType {
 }
 
 function EventView() {
-  const [events, setEvents] = useState([]);
-  const [viewType, setViewType] = useState(ViewType.PHOTO_ALBUM);
+  const { viewType, changeType, events, setEvents } = useEventStore();
 
   const [photoAlbumView, wordCloudView] = useMemo(() => {
     return [
@@ -21,21 +21,23 @@ function EventView() {
   }, [viewType]);
 
   useEffect(() => {
-    axios
-      .post("/event/list")
-      .then((response) => {
-        if (response.data.success) {
-          setEvents(response.data.eventList);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    if (events.length === 0) {
+      axios
+        .post("/event/list")
+        .then((response) => {
+          if (response.data.success) {
+            setEvents(response.data.eventList);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [viewType]);
 
   const switchPageView = () => {
-    if (viewType === ViewType.PHOTO_ALBUM) setViewType(ViewType.KEYWORD_CLOUD);
-    else setViewType(ViewType.PHOTO_ALBUM);
+    if (viewType === ViewType.PHOTO_ALBUM) changeType(ViewType.KEYWORD_CLOUD);
+    else changeType(ViewType.PHOTO_ALBUM);
   };
 
   return (
