@@ -7,7 +7,10 @@ import {
   PhotoAlbumViewProp,
 } from "../../types/event";
 
-type ImageDescItemWithKeyword = ImageDescItem & { keyword: string };
+type ImageDescItemWithKeyword = ImageDescItem & {
+  keyword: string;
+  imgOrd: number;
+};
 
 function PhotoAlbumView(props: PhotoAlbumViewProp) {
   const [photos, setPhotos] = useState<ImageDescItemWithKeyword[]>([]);
@@ -19,8 +22,8 @@ function PhotoAlbumView(props: PhotoAlbumViewProp) {
     props?.events?.forEach((event, index) => {
       // 이미지 목록에는 키워드 속성이 없어서 데이터 가공 후 push
       tempArr.push(
-        ...event.descImaegsList.map((item) => {
-          return { ...item, keyword: event.keyWord };
+        ...event.descImaegsList.map((item, idx) => {
+          return { ...item, keyword: event.keyWord, imgOrd: idx };
         })
       );
     });
@@ -34,9 +37,9 @@ function PhotoAlbumView(props: PhotoAlbumViewProp) {
     return require(`../../assets/images/event/${path.replace("JPG", "jpg")}`);
   };
 
-  const goToDetailPage = (keyword: string) => {
+  const goToDetailPage = (keyword: string, ord: number) => {
     // 키워드에 해당하는 경험의 상세 페이지로 이동
-    navigate(`/event/${keyword.replace(" ", "")}`);
+    navigate(`/event/${keyword.replace(" ", "")}/${ord}`);
   };
 
   return (
@@ -46,7 +49,7 @@ function PhotoAlbumView(props: PhotoAlbumViewProp) {
           <div
             key={idx}
             className="img-container"
-            onClick={() => goToDetailPage(photo.keyword)}
+            onClick={() => goToDetailPage(photo.keyword, photo.imgOrd)}
           >
             <img
               src={loadImage(photo.fileName)}

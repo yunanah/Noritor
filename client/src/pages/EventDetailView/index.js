@@ -9,7 +9,7 @@ import { Carousel } from "react-responsive-carousel";
 
 function EventDetailView() {
   //TODO: 사진 인덱스까지 파라미터로 넘겨서 들어오면 바로 그 사진 보이게 설정
-  const { keyword } = useParams();
+  const { keyword, ord } = useParams();
   const [eventData, setEventData] = useState(null);
   const [imageList, setImageList] = useState([]);
   const [currIdx, setCurrIdx] = useState(0);
@@ -32,10 +32,11 @@ function EventDetailView() {
     <section className="page-container">
       <Carousel
         className="carousel_"
+        selectedItem={ord}
         showArrows={false}
         centerMode={true}
         showThumbs={true}
-        showStatus={true}
+        showStatus={false}
         infiniteLoop={false}
         centerSlidePercentage={100}
         onChange={(currentIdx, item) => {

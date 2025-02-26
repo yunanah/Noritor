@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<EventView />} />
         <Route path="/event">
-          <Route path=":keyword" element={<EventDetailView />} />
+          <Route path=":keyword/:ord?" element={<EventDetailView />} />
         </Route>
       </Routes>
     </>
