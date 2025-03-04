@@ -1,14 +1,15 @@
 .switch {
   position: fixed;
-  z-index: 100;
-  right: 3%;
+  z-index: 300;
+  right: 50%;
+  transform: translateX(50%);
   bottom: 3%;
-  width: 60px;
+  width: 140px;
   height: 60px;
   background-color: #fff;
   opacity: 0.85;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }

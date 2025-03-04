@@ -30,13 +30,14 @@ function EventDetailView() {
 
   return (
     <section className="page-container">
+      {/* TODO: 상세페이지 진입시 status 동기화 안됨 */}
       <Carousel
         className="carousel_"
-        selectedItem={ord}
+        selectedItem={ord ?? 0}
         showArrows={false}
         centerMode={true}
         showThumbs={true}
-        showStatus={false}
+        showStatus={true}
         infiniteLoop={false}
         centerSlidePercentage={100}
         onChange={(currentIdx, item) => {

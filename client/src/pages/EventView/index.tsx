@@ -4,19 +4,22 @@ import PhotoAlbumView from "../../components/event/PhotoAlbumView";
 import NavSwitch from "../../components/base/NavSwitch";
 import KeywordCloudView from "../../components/event/KeywordCloudView";
 import useEventStore from "../../stores/event";
+import ResumeView from "../../components/event/ResumeView";
 
 export enum ViewType {
   PHOTO_ALBUM = "photo-album-view",
   KEYWORD_CLOUD = "keyword-cloud-view",
+  RESUME = "resume-view",
 }
 
 function EventView() {
   const { viewType, changeType, events, setEvents } = useEventStore();
 
-  const [photoAlbumView, wordCloudView] = useMemo(() => {
+  const [photoAlbumView, wordCloudView, resumeView] = useMemo(() => {
     return [
       viewType === ViewType.PHOTO_ALBUM,
       viewType === ViewType.KEYWORD_CLOUD,
+      viewType === ViewType.RESUME,
     ];
   }, [viewType]);
 
@@ -35,20 +38,26 @@ function EventView() {
     }
   }, [viewType]);
 
-  const switchPageView = () => {
-    if (viewType === ViewType.PHOTO_ALBUM) changeType(ViewType.KEYWORD_CLOUD);
-    else changeType(ViewType.PHOTO_ALBUM);
+  const switchPageView = (type: ViewType) => {
+    if (type === ViewType.PHOTO_ALBUM) changeType(ViewType.PHOTO_ALBUM);
+    else if (type === ViewType.KEYWORD_CLOUD)
+      changeType(ViewType.KEYWORD_CLOUD);
+    else if (type === ViewType.RESUME) changeType(ViewType.RESUME);
   };
 
   return (
     <section className="page-container">
-      {photoAlbumView ? (
-        <PhotoAlbumView events={events} />
+      {!photoAlbumView ? (
+        resumeView ? (
+          <ResumeView />
+        ) : (
+          <KeywordCloudView events={events} />
+        )
       ) : (
-        <KeywordCloudView events={events} />
+        <PhotoAlbumView events={events} />
       )}
 
-      <NavSwitch onClick={() => switchPageView()} />
+      <NavSwitch onClick={(type: any) => switchPageView(type)} />
     </section>
   );
 }

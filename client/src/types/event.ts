@@ -23,3 +23,27 @@ export interface ImageDescItem {
   fileType: string;
   desc: string;
 }
+
+export interface WorkItem {
+  companyName: string;
+  companyDesc: string;
+  startDate: string;
+  endDate?: string;
+  role?: string;
+  team?: string;
+  skillSet: SkillDataItem[];
+  projects: ProjectDescDataItem[];
+}
+
+export interface SkillDataItem {
+  name: string;
+  imgName: string;
+  kind?: string;
+}
+
+export interface ProjectDescDataItem {
+  projName: string;
+  startDt: string;
+  endDt?: string;
+  projConts: string[];
+}

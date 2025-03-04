@@ -1,11 +1,13 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { EventItem } from "../../types/event";
+import { EventItem, WorkItem } from "../../types/event";
+import { DefaultWorkData } from "../../constants";
 // import { ViewType } from "../../pages/EventView";
 
 interface EventStoreType {
   viewType: ViewType;
   events: EventItem[];
+  works: WorkItem[];
   setEvents: (val: EventItem[]) => void;
   changeType: (val: ViewType) => void;
 }
@@ -13,10 +15,12 @@ interface EventStoreType {
 export enum ViewType {
   PHOTO_ALBUM = "photo-album-view",
   KEYWORD_CLOUD = "keyword-cloud-view",
+  RESUME = "resume-view",
 }
 
 const EventStore = create<EventStoreType>((set) => ({
   events: [],
+  works: DefaultWorkData,
   viewType: ViewType.PHOTO_ALBUM,
   setEvents: (val: EventItem[]) => set({ events: val }),
   changeType: (val: ViewType) => set(() => ({ viewType: val })),
