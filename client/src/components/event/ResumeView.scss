@@ -18,6 +18,38 @@
     color: #666;
   }
 
+  .intro {
+    margin-bottom: 60px;
+    h1 {
+      font-size: 28px;
+    }
+  }
+
+  .contact {
+    margin-bottom: 40px;
+    strong {
+      margin-right: 8px;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .channel {
+    margin-bottom: 80px;
+    strong {
+      margin-right: 8px;
+    }
+    h2 {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: rgb(255, 149, 0);
+      background-color: #ffedc0;
+    }
+  }
+
   .introduction {
     margin-bottom: 80px;
     p {

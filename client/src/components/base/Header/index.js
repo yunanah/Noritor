@@ -4,7 +4,7 @@ import "./index.scss";
 function Header() {
   return (
     <div className="header">
-      <div>YURATOR</div>
+      <div> YURATOR</div>
 
       <div>BUtton</div>
     </div>

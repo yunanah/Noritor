@@ -18,6 +18,42 @@ function ResumeView() {
   return (
     <>
       <section className="resume-container">
+        <article className="intro">
+          <h1>Yura | 도메인을 이해하는 개발자</h1>
+          <p>만 4년차(== 시간 계산하기) Front-end 개발자 백유라입니다.</p>
+        </article>
+        <article className="contact">
+          <h2>Contact.</h2>
+          <p>
+            <strong>Email.</strong> bbyl6319@gmail.com (copy기능)
+            <br />
+            <br />
+            <strong>Phone.</strong> 010-4512-9080
+          </p>
+        </article>
+        <article className="channel">
+          <h2>Channel.</h2>
+          <p>
+            <strong>Github.</strong>
+            <a
+              title="깃허브 구경하기"
+              href="https://github.com/yunanah"
+              target="blank"
+            >
+              깃허브 구경하기
+            </a>
+            <br />
+            <br />
+            <strong>Blog.</strong>
+            <a
+              title="블로그 구경하기"
+              href="https://yunanah.tistory.com/"
+              target="blank"
+            >
+              블로그 구경하기
+            </a>
+          </p>
+        </article>
         <article className="introduction">
           <h2>Introduce.</h2>
           <p>
@@ -73,6 +109,12 @@ function ResumeView() {
               </div>
             </div>
           ))}
+        </article>
+        <article className="other-experience">
+          <h2>Other Experience.</h2>
+        </article>
+        <article>
+          <h2>Education.</h2>
         </article>
       </section>
       <button>PDF 다운로드</button>
