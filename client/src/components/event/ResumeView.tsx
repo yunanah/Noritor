@@ -112,9 +112,34 @@ function ResumeView() {
         </article>
         <article className="other-experience">
           <h2>Other Experience.</h2>
+          <br />
+          <strong>수상 및 자격증</strong>
+          <ul>
+            <li>정보처리기사 취득 (2021.06 / 한국산업인력공단)</li>
+
+            <li>
+              숙명 WIC 해커톤 장려상 수상 (2019.11 / 숙명여자대학교 캠퍼스타운)
+            </li>
+          </ul>
+          <br />
+          <strong>ETC</strong>
+          <ul>
+            <li>
+              위즈라이브 Javascript 온라인 코딩강의 튜터 활동 (2020.12-2021.03)
+            </li>
+            <li>
+              Raspberry Pi 초등학교 방과후교실 보조 강사 (2019.03-2019.06)
+            </li>
+          </ul>
         </article>
-        <article>
+        <article className="education">
           <h2>Education.</h2>
+          <p>
+            <span>2017.03-2023.02</span> 숙명여자대학교 컴퓨터과학과 졸업
+            <br />
+            <br />
+            <span>2013.03-2016.02</span> 인천국제고등학교 졸업 <br />
+          </p>
         </article>
       </section>
       <button>PDF 다운로드</button>

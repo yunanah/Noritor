@@ -115,10 +115,10 @@ export const DefaultWorkData: WorkItem[] = [
   {
     companyName: "엘리스",
     companyDesc:
-      "AI 기반 코딩 교육 서비스, 자체 웹 IDE를 통한 프로그래밍 특화 강의 제공",
+      "AI 기반 코딩 교육 서비스, AI 기반 프로그래밍 교육에 특화된 자체 IDE 제공",
     startDate: "20210302",
     endDate: "20210618",
-    role: "Content Developer",
+    role: "Content Developer - Intern",
     team: "1~10",
     skillSet: [
       { name: "Python", imgName: "python.svg", kind: "language" },
