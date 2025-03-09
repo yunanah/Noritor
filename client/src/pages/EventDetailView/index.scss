@@ -1,8 +1,17 @@
 @import "../../styles/mixins";
 
-.page-contaienr,
+.detail-page-contaienr,
 .carousel_ {
   padding-top: 60px;
+}
+
+.detail-page-container {
+  display: block;
+  height: 100%;
+  background-color: #fff;
+  width: 100%;
+  max-width: 742px;
+  margin: auto;
 }
 
 .root::v-deep {

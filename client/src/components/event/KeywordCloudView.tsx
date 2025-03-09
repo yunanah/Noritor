@@ -50,10 +50,12 @@ function KeywordCloudView({ events }: PhotoAlbumViewProp) {
   }, [events?.[0]?.category, cleanData]);
 
   return (
-    <section className="cloud-container">
-      {/* TODO: 이미 클릭한 단어 표시 (고민해보기) */}
-      <WordCloud words={cleanData} />
-    </section>
+    <>
+      <section className="cloud-container">
+        {/* TODO: 이미 클릭한 단어 표시 (고민해보기) */}
+        <WordCloud words={cleanData} />
+      </section>
+    </>
   );
 }
 

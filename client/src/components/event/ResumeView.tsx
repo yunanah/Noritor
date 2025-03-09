@@ -2,7 +2,7 @@ import React from "react";
 import "./ResumeView.scss";
 import useEventStore from "../../stores/event";
 import { WorkItem } from "../../types/event";
-import { dateFormat } from "../../utils";
+import { dateFormat, PhotoImgComponent } from "../../utils";
 
 function ResumeView() {
   const { works } = useEventStore();
@@ -96,10 +96,9 @@ function ResumeView() {
               <div className="skill-box">
                 {work.skillSet.map((skill, idx) =>
                   skill.imgName ? (
-                    <img
-                      src={loadImage(skill.imgName)}
+                    <PhotoImgComponent
+                      imageUrl={loadImage(skill.imgName)}
                       className={checkNeedPadding(skill.name)}
-                      alt={skill.name}
                       key={idx}
                     />
                   ) : (
@@ -142,7 +141,7 @@ function ResumeView() {
           </p>
         </article>
       </section>
-      <button>PDF 다운로드</button>
+      {/* <button>PDF 다운로드</button> */}
     </>
   );
 }

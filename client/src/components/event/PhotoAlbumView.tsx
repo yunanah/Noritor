@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
+
 import "./PhotoAlbumView.scss";
 import { useNavigate } from "react-router-dom";
-import {
-  EventItem,
-  ImageDescItem,
-  PhotoAlbumViewProp,
-} from "../../types/event";
+import { ImageDescItem, PhotoAlbumViewProp } from "../../types/event";
+import { PhotoImgComponent } from "../../utils";
 
 type ImageDescItemWithKeyword = ImageDescItem & {
   keyword: string;
@@ -43,22 +41,25 @@ function PhotoAlbumView(props: PhotoAlbumViewProp) {
   };
 
   return (
-    <section className="album-container">
-      {photos.map((photo, idx) => {
-        return (
-          <div
-            key={idx}
-            className="img-container"
-            onClick={() => goToDetailPage(photo.keyword, photo.imgOrd)}
-          >
-            <img
-              src={loadImage(photo.fileName)}
-              alt={`유레이팅 추억 ${idx + 1}번째 등록된 이미지`}
-            />
-          </div>
-        );
-      })}
-    </section>
+    <>
+      <section className="album-container">
+        {photos.map((photo, idx) => {
+          return (
+            <div
+              key={idx}
+              className="img-container"
+              onClick={() => goToDetailPage(photo.keyword, photo.imgOrd)}
+            >
+              <PhotoImgComponent imageUrl={loadImage(photo.fileName)} />
+              {/* <img
+                src={loadImage(photo.fileName)}
+                alt={`유레이팅 추억 ${idx + 1}번째 등록된 이미지`}
+              /> */}
+            </div>
+          );
+        })}
+      </section>
+    </>
   );
 }
 

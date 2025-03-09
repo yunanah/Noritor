@@ -29,7 +29,7 @@ function EventDetailView() {
   };
 
   return (
-    <section className="page-container">
+    <section className="detail-page-container">
       {/* TODO: 상세페이지 진입시 status 동기화 안됨 */}
       <Carousel
         className="carousel_"

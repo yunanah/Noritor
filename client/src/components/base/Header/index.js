@@ -4,9 +4,17 @@ import "./index.scss";
 function Header() {
   return (
     <div className="header">
-      <div>YURATOR</div>
+      <div className="name">
+        <span className="key">Y</span>
+        <span className="key">U</span>
+        <span className="key">R</span>
+        <span className="key">A</span>
+        <span className="key">T</span>
+        <span className="key">O</span>
+        <span className="key">R</span>
+      </div>
 
-      <div>공유하기</div>
+      <div></div>
     </div>
   );
 }

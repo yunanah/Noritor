@@ -5,6 +5,7 @@ import NavSwitch from "../../components/base/NavSwitch";
 import KeywordCloudView from "../../components/event/KeywordCloudView";
 import useEventStore from "../../stores/event";
 import ResumeView from "../../components/event/ResumeView";
+import "./index.scss";
 
 export enum ViewType {
   PHOTO_ALBUM = "photo-album-view",
