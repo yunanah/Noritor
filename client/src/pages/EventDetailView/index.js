@@ -6,6 +6,7 @@ import "./index.scss";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { findEventData } from "../../utils";
 
 function EventDetailView() {
   //TODO: 사진 인덱스까지 파라미터로 넘겨서 들어오면 바로 그 사진 보이게 설정
@@ -16,12 +17,16 @@ function EventDetailView() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.post("/event/detail", { keyword: keyword }).then((response) => {
-      if (response.data.success) {
-        setEventData(response.data?.eventList[0]);
-        setImageList(response.data?.eventList[0]?.descImaegsList);
-      }
-    });
+    // axios.post("/event/detail", { keyword: keyword }).then((response) => {
+    //   if (response.data.success) {
+    //     setEventData(response.data?.eventList[0]);
+    //     setImageList(response.data?.eventList[0]?.descImaegsList);
+    //   }
+    // });
+    if (!eventData) {
+      setEventData(findEventData(keyword)?.[0]);
+      setImageList(findEventData(keyword)?.[0]?.descImaegsList);
+    }
   }, []);
 
   const loadImage = (path) => {

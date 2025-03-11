@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { EventItem, WorkItem } from "../../types/event";
-import { DefaultWorkData } from "../../constants";
+import { defaultEventsData, DefaultWorkData } from "../../constants";
 // import { ViewType } from "../../pages/EventView";
 
 interface EventStoreType {
@@ -19,7 +19,7 @@ export enum ViewType {
 }
 
 const EventStore = create<EventStoreType>((set) => ({
-  events: [],
+  events: defaultEventsData,
   works: DefaultWorkData,
   viewType: ViewType.PHOTO_ALBUM,
   setEvents: (val: EventItem[]) => set({ events: val }),

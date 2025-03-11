@@ -3,6 +3,7 @@ export type PhotoAlbumViewProp = {
 };
 
 export interface EventItem {
+  id: string;
   title: string;
   importance: number; // 중요도 (1~5)
   repImgFileName: string;
@@ -15,7 +16,7 @@ export interface EventItem {
   descImagesList: ImageDescItem[];
   descImaegsList: ImageDescItem[];
   keyWord: string;
-  pathKey: string;
+  pathKey?: string;
 }
 
 export interface ImageDescItem {

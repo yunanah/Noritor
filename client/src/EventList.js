@@ -4,16 +4,18 @@ import React, { useEffect, useState } from "react";
 function EventList() {
   const [events, setEvents] = useState([]);
   useEffect(() => {
-    axios
-      .post("/event/list")
-      .then((response) => {
-        if (response.data.success) {
-          setEvents(response.data.eventList);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (events.length === 0) {
+      axios
+        .post("/event/list")
+        .then((response) => {
+          if (response.data.success) {
+            setEvents(response.data.eventList);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, []);
   return (
     <>

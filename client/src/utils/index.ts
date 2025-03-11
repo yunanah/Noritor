@@ -1,5 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
+import useEventStore from "../stores/event";
+import { defaultEventsData } from "../constants";
 type ImageComponentParam = { imageUrl: string; className?: string };
 
 // date를 yyyy.mm 형태로 변환
@@ -39,4 +41,8 @@ const PhotoImgComponent = ({
   //   return<img src={URL.createObjectURL(image)} alt={`${imageUrl}`} />;
 };
 
-export { dateFormat, PhotoImgComponent };
+const findEventData = (keyword: string) => {
+  return defaultEventsData.filter((data) => data.keyWord === keyword);
+};
+
+export { dateFormat, PhotoImgComponent, findEventData };
