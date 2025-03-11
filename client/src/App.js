@@ -13,7 +13,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient} contextSharing={true}>
         <Header />
-        <Routes>
+        <Routes basename={process.env.PUBLIC_URL}>
           <Route path="/" element={<EventView />} />
           <Route path="/event">
             <Route path=":keyword/:ord?" element={<EventDetailView />} />
