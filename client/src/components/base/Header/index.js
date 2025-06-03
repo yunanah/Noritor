@@ -1,9 +1,14 @@
 import React from "react";
 import "./index.scss";
-
+import { useNavigate } from "react-router-dom";
 function Header() {
+  const navigate = useNavigate();
+
+  const goMain = () => {
+    navigate("/");
+  };
   return (
-    <div className="header">
+    <div className="header" onClick={() => goMain()}>
       <div className="name">
         <span className="key">Y</span>
         <span className="key">U</span>

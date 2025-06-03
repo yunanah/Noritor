@@ -20,12 +20,12 @@ function ResumeView() {
       <section className="resume-container">
         <article className="intro">
           <h1>Yura | 도메인을 이해하는 개발자</h1>
-          <p>만 4년차(== 시간 계산하기) Front-end 개발자 백유라입니다.</p>
+          <p>3년차 Front-end 개발자 백유라입니다.</p>
         </article>
         <article className="contact">
           <h2>Contact.</h2>
           <p>
-            <strong>Email.</strong> bbyl6319@gmail.com (copy기능)
+            <strong>Email.</strong> bbyl6319@gmail.com
             <br />
             <br />
             <strong>Phone.</strong> 010-4512-9080
