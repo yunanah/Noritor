@@ -30,7 +30,10 @@ function EventDetailView() {
   }, []);
 
   const loadImage = (path) => {
-    return require(`../../assets/images/event/${path.replace("JPG", "jpg")}`);
+    return `${process.env.PUBLIC_URL}/assets/images/event/${path.replace(
+      "JPG",
+      "jpg"
+    )}`;
   };
 
   return (

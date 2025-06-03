@@ -32,7 +32,10 @@ function PhotoAlbumView(props: PhotoAlbumViewProp) {
   // 이미지경로 필요에 맞게 변환 및 파일 import
   // TODO: 근데 함수로 빼니가 좀 더 느려진 거 같다..?
   const loadImage = (path: string) => {
-    return require(`../../assets/images/event/${path.replace("JPG", "jpg")}`);
+    return `${process.env.PUBLIC_URL}/assets/images/event/${path.replace(
+      "JPG",
+      "jpg"
+    )}`;
   };
 
   const goToDetailPage = (keyword: string, ord: number) => {

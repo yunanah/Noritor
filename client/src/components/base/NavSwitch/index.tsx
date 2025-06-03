@@ -11,19 +11,19 @@ function NavSwitch(props: NavSwithProp) {
     <div className="switch">
       {/* TODO: 글씨 => 아이콘으로 변경  */}
       <img
-        src={require("../../../assets/icons/view/resume.svg").default}
+        src={`${process.env.PUBLIC_URL}/assets/icons/view/resume.svg`}
         onClick={() => props.onClick(ViewType.RESUME)}
         alt="이력서"
       />
       |
       <img
-        src={require("../../../assets/icons/view/photoalbum.svg").default}
+        src={`${process.env.PUBLIC_URL}/assets/icons/view/photoalbum.svg`}
         onClick={() => props.onClick(ViewType.PHOTO_ALBUM)}
         alt="포토앨범"
       />
       |
       <img
-        src={require("../../../assets/icons/view/wordcloud.svg").default}
+        src={`${process.env.PUBLIC_URL}/assets/icons/view/wordcloud.svg`}
         onClick={() => props.onClick(ViewType.KEYWORD_CLOUD)}
         alt="키워드클라우드"
       />

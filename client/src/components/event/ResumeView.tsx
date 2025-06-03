@@ -8,7 +8,7 @@ function ResumeView() {
   const { works } = useEventStore();
 
   const loadImage = (path: string) => {
-    return require(`../../assets/icons/skill/${path}`);
+    return `${process.env.PUBLIC_URL}/assets/icons/skill/${path}`;
   };
 
   const checkNeedPadding = (name: string) => {
