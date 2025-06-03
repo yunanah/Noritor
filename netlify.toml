@@ -1,6 +1,7 @@
 [build]
-  command = "npm run build"
-  publish = "build"
+  base = "client"
+  command = "npm install --legacy-peer-deps && npm run build"
+  publish = "client/build"
 
 [build.processing]
   skip_processing = true
