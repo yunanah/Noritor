@@ -20,7 +20,10 @@ function ResumeView() {
       <section className="resume-container">
         <article className="intro">
           <h1>Yura | 도메인을 이해하는 개발자</h1>
-          <p>3년차 Front-end 개발자 백유라입니다.</p>
+          <p>
+            빠른 실행력과 사용자 관점의 문제 해결을 지향하는 3년 차 프론트엔드
+            개발자 백유라입니다.
+          </p>
         </article>
         <article className="contact">
           <h2>Contact.</h2>
@@ -57,11 +60,11 @@ function ResumeView() {
         <article className="introduction">
           <h2>Introduce.</h2>
           <p>
-            비즈니스 구현을 통해 유저에게 삶 속에 작은 편의를 주고 싶은 3년 차
-            프론트엔드 개발자입니다. 이를 위해, 빠르게 개발하고 배포하는 역량을
-            활용하여 유저와 서비스 도메인을 이해하는 역량을 쌓고자
-            노력해왔습니다. 특히 다른 팀 구성원들과 적극적인 커뮤니케이션을 하는
-            협업을 통해 함께 성장하며 만들어가는 것을 좋아합니다.
+            사용자의 일상에 실제로 도움이 되는 제품을 만드는 일에 보람을 느끼는,
+            3년 차 프론트엔드 개발자입니다. 빠른 개발과 배포 역량을 바탕으로,
+            사용자와 서비스 도메인을 깊이 이해하며 의미 있는 제품을 만드는
+            개발을 지향해왔습니다. 특히 다양한 팀과의 협업 속에서 적극적으로
+            소통하고, 함께 성장하며 만들어가는 과정을 좋아합니다.
           </p>
         </article>
         <br />
@@ -79,7 +82,7 @@ function ResumeView() {
               <br />
               <br />
               <strong>
-                {work.role} (🧑‍🤝‍🧑: {work.team})
+                {work.role} (🧑‍🤝‍🧑: {work.team}인 팀)
               </strong>
               <br />
 

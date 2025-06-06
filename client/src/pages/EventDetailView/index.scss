@@ -29,12 +29,16 @@
   }
 }
 
+.title-container {
+  margin: 0 24px;
+}
+
 .title {
-  text-align: center;
+  font-style: italic;
+  text-align: left;
   font-size: 18px;
-  margin: auto auto;
   font-weight: 500;
-  margin-left: 24px;
+  text-indent: 0%;
 }
 
 .description {

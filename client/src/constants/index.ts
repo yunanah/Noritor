@@ -5,7 +5,7 @@ export const DefaultWorkData: WorkItem[] = [
   {
     companyName: "롯데카드",
     companyDesc:
-      "금융 무료 앱 인기차트 30위권 , 일간 앱/  웹서비스 사용자. 000명 서비스 ",
+      "금융 무료 앱 인기차트 30위권, 일간 앱/웹 접속 사용자 수 수십만명 규모 서비스 운영",
     startDate: "20221101",
     endDate: undefined,
     role: "Front-end Developer",
@@ -60,7 +60,7 @@ export const DefaultWorkData: WorkItem[] = [
       {
         projName: "프리미엄체크 앱 개발 참여",
         projConts: [
-          "필터기능등주요기능개발에참여",
+          "필터 기능 등 주요기능 개발에 참여",
           "React-Query, Mobx-state-tree 등을 활용한 프로젝트 구조 설계에 참여.",
         ],
         startDt: "20220501",
@@ -69,7 +69,7 @@ export const DefaultWorkData: WorkItem[] = [
       {
         projName: "프리미엄체크 웹 개발 담당",
         projConts: [
-          "앱개발프로젝트와컴포넌트구조설계를동일시하여개발시간단축",
+          "앱개발 프로젝트와 컴포넌트 구조 설계를 동일시하여 개발 시간 단축",
           "SEO 최적화와 Google Analytics 설정을 통해 웹 내 이용 분석에 도움",
           "Next.js와 Netlify 배포 환경을 이용한 서비스 유도 및 마케팅 목적의 웹 페이지 개발",
         ],
@@ -339,12 +339,12 @@ export const defaultEventsData: EventItem[] = [
     endDate: "20220902",
     descImaegsList: [
       {
-        fileName: "t3_c1_Git_1.JPG",
+        fileName: "t3_c1_git_1.JPG",
         desc: "Git을 이전까지 안써본 나.. 아니 못써본..",
         fileType: "IMG",
       },
     ],
-    repImgFileName: "t3_c1_Git_1.JPG",
+    repImgFileName: "t3_c1_git_1.JPG",
     repImgFileType: "IMG",
     keyWord: "GIT",
     descImagesList: [],
@@ -373,22 +373,23 @@ export const defaultEventsData: EventItem[] = [
   },
   {
     id: "67b492eb318ec1fe0b68403d",
-    title: "SEO 최적화된 신규 앱 서비스 홍보 사이트 개발",
+    title:
+      "검색하면 안 나오는 우리 서비스… (SEO 최적화된 신규 앱 홍보사이트 개발)",
     importance: 1,
     description:
-      "Next.js로 SSR 방식의 사이트를 개발했다. ^ 네이버 등에서 거래 매물 및 사이트 내 콘텐츠가 검색결과에 노출됨",
+      "아무리 검색해도, 우리가 만든 서비스는 안 보였다. 문제는 기술적인 거였다. CSR로 만든 페이지는 검색 엔진이 읽지 못한다는 걸 그때 처음 알았다. 그래서 Next.js로 구조를 바꿨다. SSR 방식으로 다시 만들고, meta 태그랑 sitemap, robots.txt도 하나하나 손봤다. 처음엔 생소했지만, 해보니까 구조가 보였다. 검색에 노출되기 시작한 걸 보고 괜히 뿌듯했다. 누군가는 이걸 보고 클릭할지도 모르니까. 내가 만든 웹이 누군가에게 처음 발견되는 방식. 그게 조금은 좋아졌다.",
     category: 1,
     eventType: 3,
     startDate: "20220425",
     endDate: "20220902",
     descImaegsList: [
       {
-        fileName: "t3_c1_SSR_1.JPG",
-        desc: "인턴인데 사이트를 통으로 만들라뇨,,",
+        fileName: "t3_c1_ssr_1.JPG",
+        desc: "입사 1개월 차에 사이트를 통으로 만들라뇨...?",
         fileType: "IMG",
       },
     ],
-    repImgFileName: "t3_c1_SSR_1.JPG",
+    repImgFileName: "t3_c1_ssr_1.JPG",
     repImgFileType: "IMG",
     keyWord: "SSR",
     descImagesList: [],

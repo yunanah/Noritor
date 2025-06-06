@@ -1,6 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import "./index.scss";
 
@@ -14,7 +13,6 @@ function EventDetailView() {
   const [eventData, setEventData] = useState(null);
   const [imageList, setImageList] = useState([]);
   const [currIdx, setCurrIdx] = useState(0);
-  const navigate = useNavigate();
 
   useEffect(() => {
     // axios.post("/event/detail", { keyword: keyword }).then((response) => {
@@ -64,7 +62,9 @@ function EventDetailView() {
       </Carousel>
 
       {/* TODO: 텍스트 부분만 바텀에서 살짝 올라와서 보였으면 좋을 듯. (슬라이더 부분은 고정시키고 ) */}
-      <i className="title">{imageList?.[currIdx]?.desc}</i>
+      <div className="title-container">
+        <strong className="title">{imageList?.[currIdx]?.desc}</strong>
+      </div>
       <p className="description">
         {eventData?.description.split("^").map((info, index) => info + "  ")}
       </p>
