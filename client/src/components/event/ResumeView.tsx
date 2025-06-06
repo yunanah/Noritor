@@ -127,7 +127,8 @@ function ResumeView() {
           <strong>ETC</strong>
           <ul>
             <li>
-              위즈라이브 Javascript 온라인 코딩강의 튜터 활동 (2020.12-2021.03)
+              위즈라이브 JavaScript 온라인 강의 튜터 → 기초 개념 설명 및 학습자
+              질문 응답을 통해 전달력과 문제 해결력 향상 (2020.12-2021.03)
             </li>
             <li>
               Raspberry Pi 초등학교 방과후교실 보조 강사 (2019.03-2019.06)
