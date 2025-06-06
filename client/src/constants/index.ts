@@ -339,12 +339,12 @@ export const defaultEventsData: EventItem[] = [
     endDate: "20220902",
     descImaegsList: [
       {
-        fileName: "t3_c1_git_1.JPG",
+        fileName: "t3_c1_git_1.webp",
         desc: "Git을 이전까지 안써본 나.. 아니 못써본..",
         fileType: "IMG",
       },
     ],
-    repImgFileName: "t3_c1_git_1.JPG",
+    repImgFileName: "t3_c1_git_1.webp",
     repImgFileType: "IMG",
     keyWord: "GIT",
     descImagesList: [],
@@ -384,12 +384,12 @@ export const defaultEventsData: EventItem[] = [
     endDate: "20220902",
     descImaegsList: [
       {
-        fileName: "t3_c1_ssr_1.JPG",
+        fileName: "t3_c1_ssr_1.webp",
         desc: "입사 1개월 차에 사이트를 통으로 만들라뇨...?",
         fileType: "IMG",
       },
     ],
-    repImgFileName: "t3_c1_ssr_1.JPG",
+    repImgFileName: "t3_c1_ssr_1.webp",
     repImgFileType: "IMG",
     keyWord: "SSR",
     descImagesList: [],
